@@ -1,0 +1,3 @@
+pacman -Syu
+
+# TODO
