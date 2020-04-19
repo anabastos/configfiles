@@ -1,0 +1,87 @@
+#
+# Macros
+#
+[macros.install_yarn_package]
+  prefix = ["yarn", "global", "add"]
+
+#
+# Pseudo-package tasks
+#
+[tasks.git]
+  links = [
+    ["${HM_DEST}/.czrc", "git/czrc"],
+    ["${HM_DEST}/.git-commit-msg", "git/git-commit-msg"],
+    ["${HM_DEST}/.gitconfig", "git/gitconfig"],
+    ["${HM_DEST}/.gitignore", "git/gitignore"],
+  ]
+
+[tasks.htop]
+  links = [["${HM_DEST}/.config/htop/htoprc", "htop/htoprc"]]
+
+[tasks.ssh]
+  templates = [["${HM_DEST}/.ssh/config", "ssh/config"]]
+
+[tasks.vscode__darwin]
+  links = [
+    ["${HM_DEST}/Library/Application Support/Code/User/snippets/markdown.json", "vscode/snippets/markdown.json"],
+    ["${HM_DEST}/Library/Application Support/Code/User/settings.json", "vscode/settings.json"],
+  ]
+
+[tasks.nvim]
+  links = [
+    ["${HM_DEST}/.config/nvim/init.vim", "nvim/init.vim"],
+  ]
+
+[tasks.zsh]
+  links = [
+    ["${HM_DEST}/.p10k.zsh", "zsh/p10k.zsh"],
+    ["${HM_DEST}/.zimrc", "zsh/zimrc"],
+    ["${HM_DEST}/.zlogin", "zsh/zlogin"],
+    ["${HM_DEST}/.zlogout", "zsh/zlogout"],
+    ["${HM_DEST}/.zprofile", "zsh/zprofile"],
+    ["${HM_DEST}/.zshenv", "zsh/zshenv"],
+    ["${HM_DEST}/.zshrc", "zsh/zshrc"],
+    ["${HM_DEST}/.zprivate", "zsh/zprivate"],
+  ]
+
+#
+# The father of all tasks.
+# If you want your task to be executed, add it to the deps section.
+#
+[tasks.default__darwin]
+  cmds = [
+    ["sudo", "scutil", "--set", "HostName", "A1708"],
+    ["sudo", "scutil", "--set", "LocalHostName", "A1708"],
+    ["sudo", "scutil", "--set", "ComputerName", "A1708"],
+    ["dscacheutil", "-flushcache"],
+    ["@install_yarn_package", "tldr"],
+  ]
+  deps = [
+    "git",
+    "htop",
+    "nvim",
+    "ssh",
+    "vscode",
+    "zsh",
+  ]
+  links = [
+    ["${HM_DEST}/bin/colors", "bin/colors"],
+    ["${HM_DEST}/bin/hls", "bin/hls"],
+    ["${HM_DEST}/.hushlogin", "misc/hushlogin"],
+  ]
+
+[tasks.default__linux]
+  cmds = [
+    ["@install_yarn_package", "tldr"],
+  ]
+  deps = [
+    "git",
+    "htop",
+    "nvim",
+    "zsh",
+  ]
+  links = [
+    ["${HM_DEST}/bin/colors", "bin/colors"],
+    ["${HM_DEST}/bin/hls", "bin/hls"],
+    ["${HM_DEST}/bin/wslcmd", "bin/wslcmd"],
+  ]

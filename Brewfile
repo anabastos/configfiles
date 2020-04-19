@@ -17,6 +17,7 @@ brew "zstd"
 brew "fish"
 brew "archey"
 brew "nmap"
+brew "thefuck"
 brew "wget"
 brew "awscli"
 brew "carthage"
@@ -38,8 +39,6 @@ brew "go"
 brew "gnupg"
 brew "fontconfig"
 brew "tree"
-
-
 
 cask "docker"
 cask "docker-toolbox"
