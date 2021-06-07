@@ -1,7 +1,6 @@
 [user]
-  name = Rafael Julio
-  email = hello.rjulio@gmail.com
-  signingkey = 3E651E566E1F6D7F
+  name = Ana Luiza
+  email = hello@anabastos.me
 
 [core]
   ; Use diff-so-fancy as the default pager.
@@ -14,20 +13,9 @@
   ; Global .gitignore file.
   excludesfile = ~/.gitignore
 
-[tag]
-  ; Always sign annotated tags.
-  forceSignAnnotated = true
-
 [gpg]
   ; This is needed by MacOS
   program = gpg
-
-[commit]
-  ; Template to be shown on the commit message prompt.
-  template = ~/.git-commit-msg
-
-  ; By default, signs commit with GnuPG.
-  gpgSign = true
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
