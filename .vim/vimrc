@@ -36,7 +36,6 @@ Plug 'wakatime/vim-wakatime'
 
 " * Support *
 Plug 'tpope/vim-dispatch'
-Plug 'embear/vim-localvimrc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -117,10 +116,6 @@ Plug 'tpope/vim-fugitive'
 
 " *~~ Plug end ~~*
 call plug#end()
-
-" *~~ Basic options ~~*
-" ALWAYS use fish
-set shell=/bin/fish
 
 " * NeoVim Options *
 " Display incomplete commands.
@@ -244,10 +239,6 @@ fun! RemapPaneArrows()
   nnoremap <buffer> <silent> <Up> :resize -5<cr>
 endfun
 
-augroup remappanesarrows
-	autocmd!
-	autocmd VimEnter,BufNewFile,BufReadPost,BufEnter * silent! call RemapPaneArrows()
-augroup end
 " }}}
 " ##### Hard Mode {{{
 fun! RemapArrows()
@@ -261,16 +252,6 @@ fun! RemapArrows()
   vnoremap <buffer> <silent> <Up> <nop>
   vnoremap <buffer> <silent> <Down> <nop>
 endfun
-
-augroup hardmode
-	autocmd!
-	autocmd VimEnter,BufNewFile,BufReadPost * silent! call RemapArrows()
-augroup end
-" }}}
-" ##### Line movement {{{
-" Go to start of line with H and to the end with $
-noremap H ^
-noremap L $
 
 " Emacs bindings in command-line mode
 cnoremap <C-A> <home>
@@ -328,13 +309,6 @@ nnoremap <space>xx :!chmod +x %<cr>
 " Close Quickfix and Preview
 nnoremap <space>q :pclose<cr>:cclose<cr>
 
-" OS Clipboard
-vnoremap <space>c "*y
-vnoremap <space>v "*p
-vnoremap <space>V "*P
-nnoremap <space>v "*p
-nnoremap <space>V "*P
-
 " Fix tmux navigation
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 " }}}
@@ -380,21 +354,11 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <C-P> :Files<cr>
 nnoremap <C-F> :Ag 
 " }}}
-" ##### miniyank  {{{
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-
-map <C-m> <Plug>(miniyank-cycle)
-" }}}
 " ##### Number toggle  {{{
 let g:NumberToggleTrigger="<space>ll"
 "}}}
 " ##### togglelist {{{
 let g:toggle_list_copen_command="Copen"
-" }}}
-" ##### localvimrc {{{
-let g:localvimrc_whitelist=$HOME.'/src/github.com/pagarme/.*'
-let g:localvimrc_persistent=1
 " }}}
 " ##### editorconfig {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
