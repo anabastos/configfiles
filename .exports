@@ -12,13 +12,28 @@ export LC_ALL='en_US.UTF-8';
 export PATH="$PATH:/Users/ana.luiza/flutter/bin"
 # Go
 export PATH="$PATH:/Users/ana.luiza/go/bin"
+export GO_PATH=$HOME/go
+export PATH=$GO_PATH/bin:$PATH
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export MOBILE_CACHE_WRITE=false
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Android
+export ANDROID_HOME=/Users/ana.luiza/Library/Android/sdk
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+# Java
+export JAVA_HOME8="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+export JAVA_HOME11="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+export JAVA_HOME=$JAVA_HOME8
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion$
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Make vim the default editor.
 export EDITOR='vim';
@@ -36,3 +51,6 @@ export PYTHONIOENCODING='UTF-8';
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
+
+# Lein
+export LEIN_USE_BOOTCLASSPATH=no
