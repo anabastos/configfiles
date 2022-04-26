@@ -42,6 +42,7 @@ brew tap github/gh
 brew install gh
 brew install cmake
 brew install libvterm
+brew install ispell
 brew install git
 brew install git-lfs
 brew install nvim
