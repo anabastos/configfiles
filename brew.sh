@@ -62,6 +62,7 @@ brew install archey
 brew install nmap
 brew install thefuck
 brew install awscli
+brew install ripgrep
 brew install carthage
 brew install circleci
 brew install fontconfig
@@ -143,4 +144,8 @@ omf theme pride-cat
 
 # Install emacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-emacs
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --with-spacemacs-icon --with-native-comp
+brew tap railwaycat/emacsmacport
+brew install emacs-mac
+brew install --cask emacs
