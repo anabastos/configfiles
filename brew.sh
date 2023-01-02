@@ -81,37 +81,30 @@ brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 
-# Tap cask
-brew tap homebrew/cask-fonts
-brew tap homebrew/cask
-
 # Install cask fonts
-brew cask font-hack
-brew cask font-source-code-pro
-brew cask ttf-ancient-fonts
+brew install font-hack --cask
+brew install font-source-code-pro --cask
+brew install ttf-ancient-fonts --cask
 # Spacemacs pre-requisite
-brew cask font-victor-mono
+brew install font-victor-mono --cask
 
 # Install by cask
-brew cask docker
-brew cask docker-toolbox
-brew cask google-chrome
-brew cask iterm2
-brew cask slack
-brew cask telegram-desktop
-brew cask gpg-suite
-brew cask insomnia
-brew cask gimp
-brew cask graphiql
-brew cask keepassxc
-brew cask spotify
-brew cask pomello
-brew cask flux
-brew cask streamio
-brew cask visual-studio-code
-brew cask league-of-legends
-brew cask zoho-mail
-brew cask transmission
+brew install docker --cask
+brew install docker-toolbox --cask
+brew install slack --cask
+brew install telegram-desktop --cask
+brew install gpg-suite --cask
+brew install insomnia --cask
+brew install gimp --cask
+brew install graphiql --cask
+brew install keepassxc --cask
+brew install spotify --cask
+brew install pomello --cask
+brew install flux --cask
+brew install streamio --cask
+brew install visual-studio-code --cask
+brew install zoho-mail --cask
+brew install transmission --cask
 
 # Remove outdated versions from the cellar.
 brew cleanup
