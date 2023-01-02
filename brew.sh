@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# echo "source ~/bash_profile" >> ~/zshrc
+
+# Install xcode
+xcode-select –install
+sudo xcodebuild -license accept
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -63,6 +69,7 @@ brew install tree
 brew install openssh
 
 # Instal languages
+brew install npm
 brew install clojure
 brew install elixir
 brew install emacs
@@ -116,6 +123,8 @@ npm install -g prettier intelephense yarn import-js flow-bin  typescript
 npm install -g typescript-language-server dockerfile-language-server-nodejs
 
 # Python stuff
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
 pip install --upgrade pip
 pip install flake8
 pip install autoflake
@@ -126,3 +135,12 @@ pip install wakatime
 gem install specific_install
 gem specific_install https://github.com/brigade/scss-lint.git
 gem specific_install https://github.com/Sweetchuck/scss_lint_reporter_checkstyle.git
+
+# OMF theme
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+omf install https://github.com/queenkjuul/omf-pride-cat
+omf theme pride-cat
+
+# Install emacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+emacs
