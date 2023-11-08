@@ -16,5 +16,3 @@ if [ -f '/Users/ana.luiza/Downloads/google-cloud-sdk/completion.bash.inc' ]; the
 
 archey
 echo "༼ つ ◕_◕ ༽つ Bem vinda Ana Linda <3"
-
-source ~/.nurc
