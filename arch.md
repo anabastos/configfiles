@@ -6,6 +6,12 @@ makepkg -si
 sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
+git clone https://aur.archlinux.org/yay-git.git
+cd yay
+makepkg -si
+yay -S google-chrome
+yay -Syu
+
 sudo snap install yubioath-desktop
 sudo snap install spotify
 sudo snap install ksudoku
